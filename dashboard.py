@@ -64,18 +64,18 @@ st.write("---")
 # Load Data Awal
 df_sentiment = fetch_sentiment_data()
 
-# Sidebar: Tombol Trigger Ingestion Manual
+#Sidebar: Tombol Trigger Ingestion Manual
 st.sidebar.header("🔌 Live API Stream Gateway")
 st.sidebar.write("Simulasikan penarikan berita finansial terbaru secara real-time.")
 if st.sidebar.button("⚡ Fetch & Process New Headline"):
     t, h, s, l = generate_mock_api_feed()
     inject_single_live_feed(t, h, s, l)
     st.sidebar.success(f"Berhasil memproses headline untuk {t}!")
-    # Re-fetch data setelah data baru masuk
+    #Re-fetch data setelah data baru masuk
     df_sentiment = fetch_sentiment_data()
 
 if not df_sentiment.empty:
-    # 3. KARTU METRIK UTAMA (KPI CARDS)
+    #3. KARTU METRIK UTAMA (KPI CARDS)
     total_headlines = len(df_sentiment)
     avg_score = df_sentiment['sentiment_score'].mean()
     
@@ -91,12 +91,12 @@ if not df_sentiment.empty:
         
     st.write("---")
     
-    # 4. GRID VISUALISASI UTAMA
+    #4. GRID VISUALISASI UTAMA
     col1, col2 = st.columns([1.8, 1.2])
     
     with col1:
         st.markdown("### 📉 Tren Fluktuasi Sentimen Historis")
-        # Line chart tren menggunakan Plotly
+        #Line chart tren menggunakan Plotly
         fig_line = px.line(df_sentiment, x='timestamp', y='sentiment_score', color='asset_ticker',
                            title="Pergerakan Skor Sentimen Sentimen Per Aset",
                            labels={'sentiment_score': 'Skor Sentimen', 'timestamp': 'Waktu Deteksi'},
@@ -115,7 +115,7 @@ if not df_sentiment.empty:
         
     st.write("---")
     
-    # 5. HISTORICAL DATAFRAME FROM SQL
+    #5. HISTORICAL DATAFRAME FROM SQL
     st.markdown("### 🔍 Transkrip Audit Log Sentiment Terbaru (Live Query SQL)")
     st.dataframe(df_sentiment[['timestamp', 'asset_ticker', 'headline', 'sentiment_score', 'sentiment_label']].sort_values(by='timestamp', ascending=False), use_container_width=True)
 
