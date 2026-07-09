@@ -1,10 +1,10 @@
-# nlp-market-sentiment (Pro Version)
+#  nlp-market-sentiment (Pro Version)
 
 An institutional-grade real-time financial sentiment ingestion pipeline and predictive psychology analytics engine. Designed for quantitative analysis across digital assets, commodities, and forex markets (BTC, GOLD, EUR/USD), this system ingests live market headlines, computes NLP sentiment polarity indices, archives logs into a structured relational SQL database, and renders historical trend metrics.
 
 ---
 
-## Key Features
+##  Key Features
 
 * **Real-Time Data Ingestion Pipeline:** Simulates an active API gateway ingestion stream that pulls highly volatile macroeconomic headlines periodically.
 * **NLP Polarity Scoring Rule:** Implements automated processing to evaluate headlines, mapping numerical sentiments onto strict operational boundaries (-1.0 to +1.0) and classifying market states into Bullish, Bearish, or Neutral.
@@ -13,7 +13,7 @@ An institutional-grade real-time financial sentiment ingestion pipeline and pred
 
 ---
 
-## Repository Structure
+##  Repository Structure
 
 * `dashboard.py` - Production script housing the Streamlit graphical interface, Plotly interactive trend monitors, and live manual API fetch triggers.
 * `sentiment_pipeline.py` - Standalone ingestion engine simulating terminal-based streaming and database logging operations.
