@@ -1,6 +1,6 @@
-#  nlp-market-sentiment (Pro Version)
+#  nlp-market-sentiment 
 
-An institutional-grade real-time financial sentiment ingestion pipeline and predictive psychology analytics engine. Designed for quantitative analysis across digital assets, commodities, and forex markets (BTC, GOLD, EUR/USD), this system ingests live market headlines, computes NLP sentiment polarity indices, archives logs into a structured relational SQL database, and renders historical trend metrics.
+A simulated data pipeline designed to demonstrate NLP-driven market sentiment analysis. This project simulates an active API gateway ingestion stream to process textual data and extract sentiment indicators for quantitative research.
 
 ---
 
